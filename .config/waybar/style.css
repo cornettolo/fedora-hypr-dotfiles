@@ -1,28 +1,28 @@
 * {
     /* font-family: 'Noto Sans Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace; */
     font-family: 'CaskaydiaMonoNF', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
-    font-size: 14px;
+    font-size: 10px;
 }
 
 .modules-right {
     background-color: rgba(31, 31, 31, 0.8);
     color: rgba(241, 241, 241, 0.6);
     border-radius: 24px;
-    padding: 2px 24px;
+    padding: 0 12px;
 }
 
 .modules-center {
     background-color: rgba(31, 31, 31, 0.8);
     color: rgba(241, 241, 241, 0.6);
     border-radius: 24px;
-    padding: 2px 24px;
+    padding: 0 12px;
 }
 
 .modules-left {
     background-color: rgba(31, 31, 31, 0.8);
     color: rgba(241, 241, 241, 0.6);
     border-radius: 24px;
-    padding: 2px 24px;
+    padding: 0 12px;
 }
 
 window#waybar {
@@ -106,7 +106,7 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    padding: 0 10px;
+    padding: 0px 4px;
     color: rgba(241, 241, 241, 0.9);
 }
 
@@ -170,17 +170,17 @@ label:focus {
 
 #cpu {
     color: #2ecc71;
-    padding-right: 14px;
+    padding-right: 8px;
 }
 
 #memory {
     color: #9b59b6;
-    padding-right: 14px;
+    padding-right: 8px;
 }
 
 #disk {
     color: #964B00;
-    padding-right: 14px;
+    padding-right: 8px;
 }
 
 #backlight {
@@ -251,7 +251,6 @@ label:focus {
 
 #idle_inhibitor {
     color: rgba(241, 241, 241, 0.5);
-    padding-right: 19px;
 }
 
 #idle_inhibitor.activated {

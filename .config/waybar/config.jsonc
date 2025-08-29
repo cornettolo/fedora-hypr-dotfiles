@@ -2,10 +2,10 @@
 {
   "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
-  "height": 20,
-  "margin-top": 8,
-  "margin-left": 24,
-  "margin-right": 24,
+  // "height": 18,
+  "margin-top": 10,
+  "margin-left": 10,
+  "margin-right": 10,
   // "width": 1280, // Waybar width
   "spacing": 12, // Gaps between modules (4px)
   // Choose the order of the modules
@@ -24,9 +24,9 @@
     "pulseaudio",
     "network",
     //    "power-profiles-daemon",
-    //    "cpu",
-    //    "memory",
-    "temperature",
+    "cpu",
+    "memory",
+    // "temperature",
     "backlight",
     // "hyprland/language",
     "bluetooth",
@@ -90,12 +90,12 @@
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
-      "activated": "",
-      "deactivated": ""
+      "activated": " ",
+      "deactivated": " "
     }
   },
   "tray": {
-    "icon-size": 21,
+    "icon-size": 16,
     "spacing": 10,
     "icons": {
       "blueman": "bluetooth",
@@ -151,11 +151,11 @@
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
     "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
     ]
   },
   "battery#bat2": {
@@ -174,11 +174,11 @@
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ipaddr}/{cidr} ",
-    "tooltip-format": "{ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
+    "format-wifi": "{essid} ({signalStrength}%)  ",
+    "format-ethernet": "{ipaddr}/{cidr}  ",
+    "tooltip-format": "{ifname} via {gwaddr}  ",
+    "format-linked": "{ifname} (No IP)  ",
+    "format-disconnected": "Disconnected ⚠ ",
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "pulseaudio": {
@@ -187,20 +187,19 @@
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
+    "format-source": "{volume}%  ",
+    "format-source-muted": " ",
     "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
       "default": [
-        "",
-        "",
-        ""
-      ]
+        " ",
+        " ",
+        " " ]
     },
     "on-click": "pavucontrol"
   },
