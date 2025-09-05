@@ -7,7 +7,7 @@
   "margin-left": 10,
   "margin-right": 10,
   // "width": 1280, // Waybar width
-  "spacing": 12, // Gaps between modules (4px)
+  "spacing": 8, // Gaps between modules (4px)
   // Choose the order of the modules
   "modules-left": [
     "hyprland/workspaces",
@@ -16,10 +16,9 @@
     "hyprland/window"
   ],
   "modules-center": [
-    "clock",
-    "idle_inhibitor"
   ],
   "modules-right": [
+    "idle_inhibitor",
     "privacy",
     "pulseaudio",
     "network",
@@ -32,6 +31,8 @@
     "bluetooth",
     "battery",
     "tray",
+    "custom/notification",
+    "clock",
     "custom/power"
   ],
   // Modules configuration
@@ -95,7 +96,7 @@
     }
   },
   "tray": {
-    "icon-size": 16,
+    "icon-size": 12,
     "spacing": 10,
     "icons": {
       "blueman": "bluetooth",
@@ -231,25 +232,45 @@
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "on-click": "flatpak run io.github.kaii_lb.Overskride"
   },
+    "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": " <span foreground='red'><sup></sup></span>",
+      "none": " ",
+      "dnd-notification": " <span foreground='red'><sup></sup></span>",
+      "dnd-none": " ",
+      "inhibited-notification": " <span foreground='red'><sup></sup></span>",
+      "inhibited-none": " ",
+      "dnd-inhibited-notification": " <span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": " "
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
   "privacy": {
     "icon-spacing": 12,
-    "icon-size": 18,
+    "icon-size": 12,
     "transition-duration": 250,
     "modules": [
       {
         "type": "screenshare",
         "tooltip": true,
-        "tooltip-icon-size": 24
+        "tooltip-icon-size": 12
       },
       {
         "type": "audio-out",
         "tooltip": true,
-        "tooltip-icon-size": 24
+        "tooltip-icon-size": 12
       },
       {
         "type": "audio-in",
         "tooltip": true,
-        "tooltip-icon-size": 24
+        "tooltip-icon-size": 12
       }
     ],
     "ignore-monitor": true,
