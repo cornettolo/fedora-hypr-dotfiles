@@ -3,9 +3,9 @@
   "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
   // "height": 18,
-  "margin-top": 4,
-  "margin-left": 8,
-  "margin-right": 8,
+  "margin-top": 10,
+  "margin-left": 10,
+  "margin-right": 10,
   // "width": 1280, // Waybar width
   "spacing": 8, // Gaps between modules (4px)
   // Choose the order of the modules
