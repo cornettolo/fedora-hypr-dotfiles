@@ -1,27 +1,28 @@
 * {
     /* font-family: 'Noto Sans Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace; */
-    font-family: 'CaskaydiaMonoNF', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
-    font-size: 10px;
+    /* font-family: 'CaskaydiaMonoNF', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace; */
+    font-family: 'DepartureMono Nerd Font', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
+    font-size: 12px;
 }
 
 .modules-right {
-    background-color: rgba(31, 31, 31, 0.8);
-    color: rgba(241, 241, 241, 0.6);
-    border-radius: 24px;
+    background-color: rgba(241, 241, 241, 0.8);
+    color: rgba(31, 31, 31, 0.6);
+    border-radius: 4px;
     padding: 0 12px;
 }
 
 /* .modules-center { */
-/*     background-color: rgba(31, 31, 31, 0.8); */
-/*     color: rgba(241, 241, 241, 0.6); */
+/*     background-color: rgba(241, 241, 241, 0.8); */
+/*     color: rgba(31, 31, 31, 0.6); */
 /*     border-radius: 24px; */
 /*     padding: 0 12px; */
 /* } */
 
 .modules-left {
-    background-color: rgba(31, 31, 31, 0.8);
-    color: rgba(241, 241, 241, 0.6);
-    border-radius: 24px;
+    background-color: rgba(241, 241, 241, 0.8);
+    color: rgba(31, 31, 31, 0.6);
+    border-radius: 4px;
     padding: 0 12px;
 }
 
@@ -56,7 +57,7 @@ window#waybar.chromium {
 
 button {
     /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
+    /* box-shadow: inset 0 -3px transparent; */
     /* Avoid rounded borders under each button name */
     border: none;
     border-radius: 0;
@@ -81,7 +82,7 @@ button:hover {
 }
 
 #workspaces button.active {
-    color: #FFBA00;
+    color: #E020BA;
 }
 
 
@@ -109,7 +110,7 @@ button:hover {
 #power-profiles-daemon,
 #mpd {
     padding: 0px 4px;
-    color: rgba(241, 241, 241, 0.9);
+    color: rgba(31, 31, 31, 0.9);
 }
 
 
@@ -122,14 +123,6 @@ button:hover {
 /* .modules-right>widget:last-child>#workspaces {
     margin-right: 0;
 } */
-
-#clock {
-    color: rgba(241, 241, 241, 0.9);
-}
-
-#battery {
-    color: rgba(241, 241, 241, 0.9);
-}
 
 #battery.charging,
 #battery.plugged {
@@ -208,7 +201,7 @@ label:focus {
 }
 
 #wireplumber {
-    color: rgba(241, 241, 241, 0.9);
+    color: rgba(31, 31, 31, 0.9);
     /* color: #000000; */
 }
 
@@ -252,11 +245,11 @@ label:focus {
 }
 
 #idle_inhibitor {
-    color: rgba(241, 241, 241, 0.5);
+    color: rgba(31, 31, 31, 0.5);
 }
 
 #idle_inhibitor.activated {
-    color: rgba(241, 241, 241, 0.9);
+    color: rgba(31, 31, 31, 0.9);
 }
 
 #mpd {
@@ -277,7 +270,7 @@ label:focus {
 
 
 #keyboard-state {
-    color: rgba(241, 241, 241, 0.9);
+    color: rgba(31, 31, 31, 0.9);
     min-width: 16px;
 }
 
@@ -294,7 +287,7 @@ label:focus {
 }
 
 #privacy-item {
-    color: rgba(241, 241, 241, 0.9);
+    color: rgba(31, 31, 31, 0.9);
 }
 
 #privacy-item.screenshare {
@@ -310,5 +303,5 @@ label:focus {
 }
 
 #custom-power {
-    color: #FFBA00;
+    color: #E020BA;
 }
