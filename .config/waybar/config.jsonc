@@ -11,8 +11,8 @@
   // Choose the order of the modules
   "modules-left": [
     "hyprland/workspaces",
-    "hyprland/mode",
     "hyprland/scratchpad",
+    "hyprland/mode",
     "hyprland/window"
   ],
   "modules-center": [
@@ -38,7 +38,7 @@
   // Modules configuration
   "hyprland/workspaces": {
     "disable-scroll": false,
-    "all-outputs": true
+    "all-outputs": false
   },
   "keyboard-state": {
     "numlock": true,

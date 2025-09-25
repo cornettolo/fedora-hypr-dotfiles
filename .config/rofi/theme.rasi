@@ -112,6 +112,8 @@ window {
     border: 2px;
     border-radius: 4px;
     border-color: var(accent);
+    location: center;
+    anchor: center;
 }
 
 mainbox {

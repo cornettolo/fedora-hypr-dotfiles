@@ -4,8 +4,8 @@
  **/
 * {
     accent: #FFBA00;
-    background: #F1F1F1;
-    foreground: #1F1F1F;
+    background: #1F1F1F;
+    foreground: #F1F1F1;
     dark-accent: #505050;
     spacing: 2;
 
