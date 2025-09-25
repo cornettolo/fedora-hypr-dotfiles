@@ -2,10 +2,10 @@
  * rofi -dump-theme output.
  * Rofi version: 1.7.9+wayland1
  **/
+@import                          "colors.rasi"
+@import                          "fonts.rasi"
+
 * {
-    accent: #FFBA00;
-    background: #F1F1F1;
-    foreground: #1F1F1F;
     dark-accent: #505050;
     spacing: 2;
 
