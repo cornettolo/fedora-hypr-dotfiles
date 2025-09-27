@@ -2,7 +2,8 @@
     /* font-family: 'Noto Sans Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace; */
     /* font-family: 'CaskaydiaMonoNF', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace; */
     font-family: 'DepartureMono Nerd Font', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
-    font-size: 12px;
+    font-size: 10;
+    font-weight: 800;
 }
 
 .modules-right {

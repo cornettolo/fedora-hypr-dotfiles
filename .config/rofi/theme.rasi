@@ -45,6 +45,7 @@ element {
     cursor: pointer;
     spacing: 5px;
     border: 0;
+    border-radius: 4px;
 }
 
 element normal.normal {
@@ -107,6 +108,7 @@ element-icon {
 }
 
 window {
+    width: 600px;
     padding: 5;
     background-color: var(background);
     border: 2px;
@@ -156,11 +158,13 @@ sidebar {
 
 button {
     cursor: pointer;
+    border-radius: 4px;
     spacing: 0;
     text-color: var(normal-foreground);
 }
 
 button selected {
+    border-radius: 4px;
     background-color: var(selected-normal-background);
     text-color: var(selected-normal-foreground);
 }

@@ -28,19 +28,20 @@ no=' No'
 
 # Rofi CMD
 rofi_cmd() {
-  rofi -dmenu \
-    -p "$host" \
-    -mesg "Uptime: $uptime" \
-    -theme ${dir}/${theme}.rasi
+  pkill rofi ||
+    rofi -dmenu \
+      -p "$host" \
+      -mesg "noo non speniermi :c" \
+      -theme ${dir}/${theme}.rasi
 }
 
 # Confirmation CMD
 confirm_cmd() {
-  rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 250px;}' \
-    -theme-str 'mainbox {children: [ "message", "listview" ];}' \
-    -theme-str 'listview {columns: 2; lines: 1;}' \
-    -theme-str 'element-text {horizontal-align: 0.5;}' \
-    -theme-str 'textbox {horizontal-align: 0.5;}' \
+  rofi -theme-stk 'window {location: center; anchor: center; fullscreen: true; width: 300px;}' \
+    -theme-str 'mainbox { children: [ "message", "listview" ]; horizontal-align: 0.5; }' \
+    -theme-str 'listview { columns: 1; lines: 2; }' \
+    -theme-str 'element-text { horizontal-align: 0.5; }' \
+    -theme-str 'textbox { horizontal-align: 0.5; }' \
     -dmenu \
     -p 'Confirmation' \
     -mesg 'Are you Sure?' \
