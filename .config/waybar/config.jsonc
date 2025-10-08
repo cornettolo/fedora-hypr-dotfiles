@@ -3,17 +3,18 @@
   "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
   // "height": 18,
-  "margin-top": 4,
+  "margin-top": 8,
   "margin-left": 8,
   "margin-right": 8,
   // "width": 1280, // Waybar width
-  "spacing": 8, // Gaps between modules (4px)
+  "spacing": 12, // Gaps between modules (4px)
   // Choose the order of the modules
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/scratchpad",
     "hyprland/mode",
-    "hyprland/window"
+    // "hyprland/window",
+    "custom/media"
   ],
   "modules-center": [
   ],
@@ -27,7 +28,7 @@
     "memory",
     // "temperature",
     "backlight",
-    // "hyprland/language",
+    "hyprland/language",
     "bluetooth",
     "battery",
     "tray",
@@ -61,6 +62,10 @@
     ],
     "tooltip": true,
     "tooltip-format": "{app}: {title}"
+  },
+  "hyprland/language": {
+      "format": " 󰌌 {short} {variant} ",
+      // "format-us": "US ({variant})",
   },
   "mpd": {
     "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -96,8 +101,8 @@
     }
   },
   "tray": {
-    "icon-size": 12,
-    "spacing": 10,
+    "icon-size": 10,
+    "spacing": 6,
     "icons": {
       "blueman": "bluetooth",
       "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
@@ -218,9 +223,9 @@
   },
   "custom/power": {
     "class": "power-button",
-    "format": "⏻ ",
+    "format": "⏻",
     "tooltip": false,
-    "on-click": "wlogout"
+    "on-click": "~/.local/bin/hypr/rofi/powermenu.sh"
   },
   "bluetooth": {
     // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
@@ -232,18 +237,18 @@
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "on-click": "flatpak run io.github.kaii_lb.Overskride"
   },
-    "custom/notification": {
+  "custom/notification": {
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
-      "notification": " <span foreground='red'><sup></sup></span>",
-      "none": " ",
-      "dnd-notification": " <span foreground='red'><sup></sup></span>",
-      "dnd-none": " ",
-      "inhibited-notification": " <span foreground='red'><sup></sup></span>",
-      "inhibited-none": " ",
-      "dnd-inhibited-notification": " <span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": " "
+      "notification": "<span foreground='red'>󰅸</span>",
+      "none": "<span>󰂜</span>",
+      "dnd-notification": "<span foreground='red'>󰪑</span>",
+      "dnd-none": "<span>󰪑</span>",
+      "inhibited-notification": "<span foreground='red'>󰅸</span>",
+      "inhibited-none": "<span>󰂜<span>",
+      "dnd-inhibited-notification": "<span foreground='red'>󰪑</span>",
+      "dnd-inhibited-none": "<span>󰪑</span>"
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
@@ -253,8 +258,8 @@
     "escape": true
   },
   "privacy": {
-    "icon-spacing": 12,
-    "icon-size": 12,
+    "icon-spacing": 8,
+    "icon-size": 10,
     "transition-duration": 250,
     "modules": [
       {

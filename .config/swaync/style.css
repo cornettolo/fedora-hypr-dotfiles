@@ -1,0 +1,289 @@
+@define-color background                 rgba(241, 241, 241, 0.9);
+@define-color background-alt             rgba(221, 221, 221, 0.7);
+@define-color background-alt-darker      rgba(200, 200, 200, 0.7);
+@define-color accent-normal    	         #fc3d03;
+@define-color accent-error     	         #ff6f21;
+@define-color bordercolor                #fc3d03;
+@define-color fontcolor 	               rgb(31, 31, 31);
+@define-color fontaltcolor 	             rgb(71, 71, 71);
+
+
+/* config */
+
+* {
+    font-family: "CaskaydiaMono NF";
+    font-size: 12px;
+  }
+
+scrollbar slider {
+  margin: -3px;
+  opacity: 0.0;
+}
+
+scrollbar trough {
+  margin: 2px 0;
+  opacity: 0.0;
+}
+
+/* notification */
+.notification {
+  background-color: @background-alt;
+  color: @fontcolor;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: none;
+}
+
+.notification:hover {
+    background: @background-alt-darker;
+    color: @fontcolor;
+}
+
+.notification:focus {
+    background: @background-alt-darker;
+    color: @fontcolor;
+}
+
+.notification-default-action {
+  border-radius: 4px;
+}
+
+.notification-default-action:hover {
+    color: @fontcolor;
+    background: @background-alt-darker;
+}
+
+.notification-default-action:focus {
+    color: @fontcolor;
+    background: @background-alt-darker;
+}
+
+.image {
+  margin-right: 24px;
+  --gtk-icon-size: 48px;
+}
+
+/* notification text */
+.body {
+  color: @fontcolor;
+}
+
+.summary {
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: transparent;
+  color: @fontaltcolor;
+  text-shadow: none;
+}
+
+.time {
+  font-size: 0.8rem; /* Adjusted for better hierarchy */
+  font-weight: 700;
+  background: transparent;
+  color: @fontcolor;
+  text-shadow: none;
+}
+
+.close-button {
+  background-color: @accent-normal;
+  color: @fontaltcolor;
+  border-radius: 4px;
+}
+
+.close-button:hover {
+  background-color: @accent-error;
+}
+
+.notification-action > button {
+  border-radius: 4px;
+  padding: 4px;
+}
+
+
+.notification.critical progressbar {
+  background-color: @accent-error;
+}
+
+.notification.low progressbar,
+.notification.normal progressbar {
+  background-color: @accent-normal;
+}
+
+/* control center */
+.control-center {
+  background-color: @background;
+  color: @fontcolor;
+  border: 2px solid transparent;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.control-center-list {
+    background-color: transparent;
+    overflow: hidden;
+}
+
+/* notifications expanded-group */
+.notification-group {
+  background-color: transparent;
+  font-size: 8px;
+  border: 1px solid transparent;
+}
+
+.notification-group:focus {
+  border: 1px solid transparent;
+}
+
+.notification-group-icon {
+  color: @fontcolor;
+}
+
+.notification-group-header {
+  color: @fontcolor;
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+  background: @accent-normal;
+  color: @fontaltcolor;
+  border-radius: 4px;
+}
+
+.notification-group-collapse-button:hover,
+.notification-group-close-all-button:hover {
+  background: @accent-error;
+  color: @fontaltcolor;
+}
+
+
+/* widget title */
+.widget-title {
+  color: @fontcolor;
+}
+.widget-title>button {
+  font-size: 0.9rem;
+  color: @fontcolor;
+  background: @background-alt-darker;
+  box-shadow: none;
+}
+
+.widget-title>button:hover {
+  background: @accent-error;
+  color: @fontaltcolor;
+}
+
+/* widget button grid */
+button {
+  border: 0px;
+  min-width: 35px;
+  background: @background-alt-darker;
+  border-radius: 4px;
+}
+
+.widget-buttons-grid {
+  font-size: medium;
+  background: @background-alt-darker;
+  border-radius: 4px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  color: @fontcolor;
+  background-color: @background;
+  margin: 0px;
+  padding: 18px;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+  background: alpha(@fontcolor, 0.10);
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+  background: @accent-normal;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked label {
+    color: @fontaltcolor;
+}
+
+
+/* dnd widget */
+.widget-dnd {
+  background: @background-alt-darker;
+  border: 1px solid transparent;
+  font-size: medium;
+  color: @fontcolor;
+  border-radius: 4px;
+}
+
+.widget-dnd>label {
+  color: @fontcolor;
+}
+
+.widget-dnd>switch {
+  background: @fontaltcolor;
+  color: @fontcolor;
+  border-radius: 24px;
+  border: 1px solid transparent;
+}
+
+.widget-dnd>switch:checked {
+  background: @accent-normal;
+  border: 1px solid @accent-normal;
+}
+
+/* volume & backlight widget */
+.widget-volume {
+  background: @background-alt-darker;
+  color: @fontcolor;
+  font-size: medium;
+  margin: 8px;
+  border-radius: 4px;
+}
+
+.widget-volume label {
+  font-size: 1.5rem;
+  color: @fontaltcolor;
+  margin-left: 12px;
+}
+
+.widget-volume trough highlight {
+  background: @accent-normal;
+}
+
+.widget-backlight {
+  background: @background-alt-darker;
+  color: @background;
+  font-size: medium;
+}
+
+/* music player widget */
+.widget-mpris {
+  background: transparent;
+  margin: 8px;
+  color: @background;
+}
+
+.widget-mpris button {
+  background-color: transparent;
+  border-radius: 4px;
+  color: @background;
+}
+
+.widget-mpris button:hover {
+  background-color: @accent-normal;
+  color: @background;
+}
+
+/* sliders in backlight and volume */
+
+trough slider {
+    background: @fontcolor;
+}
+
+trough slider:hover {
+    background: @accent-normal;
+}
+
+trough highlight {
+  background: @accent-normal;
+}
