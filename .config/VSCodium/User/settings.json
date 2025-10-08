@@ -1,0 +1,222 @@
+{
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Min Dark",
+  "git.autofetch": true,
+  "editor.fontFamily": "'CaskaydiaCove Nerd Font',Consolas, 'Courier New', monospace",
+  "editor.fontSize": 11,
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "debug.terminal.clearBeforeReusing": true,
+  "terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font Mono'",
+  "editor.fontLigatures": false,
+  "editor.padding.bottom": 40,
+  "editor.padding.top": 40,
+  "gitlens.graph.scrollRowPadding": 60,
+  "eslint.format.enable": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.insertPragma": true,
+  "editor.formatOnSave": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "workbench.iconTheme": "catppuccin-perfect-latte",
+  "editor.tabSize": 2,
+  "workbench.tree.indent": 16,
+  "git.enableSmartCommit": true,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.productIconTheme": "bongocat",
+  "terminal.integrated.fontLigatures.enabled": true,
+  "editor.inlayHints.padding": true,
+  "editor.bracketPairColorization.enabled": true,
+  "workbench.sideBar.location": "right",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.editorLargeFileConfirmation": 30,
+  "vim.vimrc.enable": true,
+  "vim.leader": "<Space>",
+  "vim.timeout": 300,
+  "vim.normalModeKeyBindings": [
+    //================================================================
+    // App & Editor Control
+    //================================================================
+    {
+      "before": ["<leader>", "w"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["<leader>", "q"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    { "before": ["<leader>", "Q"], "commands": ["workbench.action.quit"] },
+    {
+      "before": ["<leader>", "u"],
+      "commands": ["workbench.action.reopenClosedEditor"]
+    },
+    {
+      "before": ["<leader>", "n"],
+      "commands": ["workbench.action.files.newUntitledFile"]
+    },
+
+    //================================================================
+    // Window (Split) Management
+    //================================================================
+    {
+      "before": ["<leader>", "s", "v"],
+      "commands": ["workbench.action.splitEditor"]
+    },
+    {
+      "before": ["<leader>", "s", "s"],
+      "commands": ["workbench.action.splitEditorDown"]
+    },
+
+    // Focus splits (using hjkl)
+    {
+      "before": ["<leader>", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+      "before": ["<leader>", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["<leader>", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+
+    // Move editor to group
+    {
+      "before": ["<leader>", "s", "h"],
+      "commands": ["workbench.action.moveEditorToLeftGroup"]
+    },
+    {
+      "before": ["<leader>", "s", "l"],
+      "commands": ["workbench.action.moveEditorToRightGroup"]
+    },
+    {
+      "before": ["<leader>", "s", "k"],
+      "commands": ["workbench.action.moveEditorToAboveGroup"]
+    },
+    {
+      "before": ["<leader>", "s", "j"],
+      "commands": ["workbench.action.moveEditorToBelowGroup"]
+    },
+
+    //================================================================
+    // Buffer / Tab Navigation
+    //================================================================
+    { "before": ["H"], "commands": ["workbench.action.previousEditor"] },
+    { "before": ["L"], "commands": ["workbench.action.nextEditor"] },
+
+    //================================================================
+    // UI & Panels
+    //================================================================
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["<leader>", "'"],
+      "commands": ["workbench.action.toggleTerminal"]
+    },
+    {
+      "before": ["<leader>", "x"],
+      "commands": ["workbench.action.closePanel"]
+    },
+    //================================================================
+    // Find & Search
+    //================================================================
+    { "before": ["<leader>", "f"], "commands": ["workbench.action.quickOpen"] },
+    {
+      "before": ["<leader>", "s", "f"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+
+    //================================================================
+    // Code Actions & Language Features
+    //================================================================
+    { "before": ["<leader>", "r"], "commands": ["editor.action.rename"] },
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    { "before": ["g", "d"], "commands": ["editor.action.revealDefinition"] },
+    { "before": ["K"], "commands": ["editor.action.showHover"] },
+    { "before": ["g", "c"], "commands": ["editor.action.commentLine"] },
+
+    //================================================================
+    // Navigation to panels
+    //================================================================
+    { "before": ["<leader>", "e"], "commands": ["workbench.view.explorer"] },
+    { "before": ["<leader>", "s", "f"], "commands": ["workbench.view.search"] },
+
+    //================================================================
+    // UI & Panel Management
+    //================================================================
+
+    // <leader>z: Toggle maximize editor (hides sidebars and panel)
+    {
+      "before": ["<leader>", "z"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    // <leader>e: Toggle File Explorer
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.view.explorer"]
+    },
+    // <leader>': Toggle Terminal (opens and focuses the lower panel)
+    {
+      "before": ["<leader>", " ' "],
+      "commands": ["workbench.action.toggleTerminal"]
+    },
+    // <leader>x: Close the lower panel
+    {
+      "before": ["<leader>", "x"],
+      "commands": ["workbench.action.closePanel"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    // Allow commenting in visual mode
+    { "before": ["g", "c"], "commands": ["editor.action.commentLine"] }
+  ],
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredLightColorTheme": "Min Light",
+  "editor.largeFileOptimizations": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.lineNumbers": "relative",
+  "editor.glyphMargin": true,
+  "search.showLineNumbers": true,
+  "notebook.lineNumbers": "on",
+  "vim.smartRelativeLine": true,
+  "vim.textwidth": 120,
+  "vim.useSystemClipboard": true,
+  "vim.statusBarColors.commandlineinprogress": "",
+  "debug.console.fontSize": 11,
+  "terminal.integrated.fontSize": 11,
+  "chat.editor.fontSize": 11,
+  "markdown.preview.fontSize": 11,
+  "markdown.preview.lineHeight": 1.4,
+  "editor.renderWhitespace": "all",
+  "editor.minimap.sectionHeaderFontSize": 8,
+  "files.saveConflictResolution": "overwriteFileOnDisk",
+  "editor.quickSuggestions": {
+    "other": "off"
+  },
+  "editor.quickSuggestionsDelay": 20,
+  "editor.autoClosingBrackets": "beforeWhitespace"
+}
