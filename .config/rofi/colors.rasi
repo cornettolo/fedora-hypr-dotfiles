@@ -1,18 +1,1 @@
-/**
- *
- * Author : Aditya Shakya (adi1090x)
- * Github : @adi1090x
- * 
- * Colors
- **/
-
-* {
-    background:     #F1F1F1FF;
-    background-alt: #F1F1F1FF;
-    foreground:     #1F1F1FFF;
-    selected:       #FC3D03FF;
-    accent:         #FC3D03FF;
-    active:         #21FF90FF;
-    urgent:         #FF4B60FF;
-    transparent:    #00000000;
-}
+/home/andrea/.config/rofi/dark/colors.rasi

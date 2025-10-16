@@ -1,0 +1,157 @@
+/* theme.css - Light Theme Example */
+
+/* --- COLOR DEFINITIONS --- */
+/* To create a new theme, just change the values in this section! */
+@define-color background                 rgba(241, 241, 241, 0.9);
+@define-color background-alt             rgba(221, 221, 221, 0.7);
+@define-color background-alt-darker      rgba(200, 200, 200, 0.7);
+@define-color accent-normal    	         #fc3d03;
+@define-color accent-error     	         #ff6f21;
+@define-color bordercolor                #fc3d03; /* This variable wasn't used, but is kept for consistency */
+@define-color fontcolor 	               rgb(31, 31, 31);
+@define-color fontaltcolor 	             rgb(71, 71, 71);
+
+/* --- COLOR APPLICATION --- */
+.notification {
+  background-color: @background-alt;
+  color: @fontcolor;
+  box-shadow: none; /* box-shadow is a theme property */
+}
+
+.notification:hover,
+.notification:focus,
+.notification-default-action:hover,
+.notification-default-action:focus {
+    background: @background-alt-darker;
+    color: @fontcolor;
+}
+
+.body, .widget-title, .notification-group-icon, .notification-group-header,
+.widget-dnd>label, .widget-buttons-grid > flowbox > flowboxchild > button {
+  color: @fontcolor;
+}
+
+.summary {
+  background: transparent;
+  color: @fontaltcolor;
+  text-shadow: none;
+}
+
+.time {
+  background: transparent;
+  color: @fontcolor;
+  text-shadow: none;
+}
+
+.close-button {
+  background-color: @accent-normal;
+  color: @fontaltcolor;
+}
+
+.close-button:hover {
+  background-color: @accent-error;
+}
+
+.notification.critical progressbar {
+  background-color: @accent-error;
+}
+
+.notification.low progressbar,
+.notification.normal progressbar {
+  background-color: @accent-normal;
+}
+
+.control-center {
+  background-color: @background;
+  color: @fontcolor;
+  border: 2px solid transparent;
+}
+
+.control-center-list, .notification-group {
+    background-color: transparent;
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+  background: @accent-normal;
+  color: @fontaltcolor;
+}
+
+.notification-group-collapse-button:hover,
+.notification-group-close-all-button:hover {
+  background: @accent-error;
+  color: @fontaltcolor;
+}
+
+.widget-title>button {
+  color: @fontcolor;
+  background: @background-alt-darker;
+  box-shadow: none;
+}
+
+.widget-title>button:hover {
+  background: @accent-error;
+  color: @fontaltcolor;
+}
+
+button, .widget-buttons-grid, .widget-dnd,
+.widget-volume, .widget-backlight {
+  background: @background-alt-darker;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+  background: alpha(@fontcolor, 0.10);
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+  background: @accent-normal;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked label {
+    color: @fontaltcolor;
+}
+
+.widget-dnd {
+  color: @fontcolor;
+}
+
+.widget-dnd>switch {
+  background: @fontaltcolor;
+  color: @fontcolor;
+  border: 1px solid transparent;
+}
+
+.widget-dnd>switch:checked {
+  background: @accent-normal;
+  border: 1px solid @accent-normal;
+}
+
+.widget-volume {
+  color: @fontcolor;
+}
+
+.widget-volume label {
+  color: @fontaltcolor;
+}
+
+.widget-backlight, .widget-mpris, .widget-mpris button,
+.widget-mpris button:hover {
+  color: @background;
+  background-color: transparent;
+}
+
+.widget-mpris button:hover {
+  background-color: @accent-normal;
+}
+
+trough slider {
+    background: @fontcolor;
+}
+
+trough slider:hover {
+    background: @accent-normal;
+}
+
+trough highlight, .widget-volume trough highlight {
+  background: @accent-normal;
+}

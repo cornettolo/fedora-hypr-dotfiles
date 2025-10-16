@@ -1,279 +1,58 @@
+/* style.css - Main structural styles */
+
+/* Import the theme-specific colors */
+@import "theme.css";
+
+/* --- Global Structure & Font --- */
 * {
-    /* font-family: 'Noto Sans Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace; */
-    /* font-family: 'CaskaydiaMonoNF', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace; */
     font-family: 'DepartureMono Nerd Font', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
     font-size: 10;
     font-weight: 800;
-}
-
-.modules-right {
-    /* background-color: rgba(241, 241, 241, 0.8); */
-    background-color: transparent;
-    color: rgba(31, 31, 31, 0.6);
-    border-radius: 4px;
-    padding: 0 12px;
-}
-
-/* .modules-center { */
-/*     background-color: rgba(241, 241, 241, 0.8); */
-/*     color: rgba(31, 31, 31, 0.6); */
-/*     border-radius: 24px; */
-/*     padding: 0 12px; */
-/* } */
-
-.modules-left {
-    /* background-color: rgba(241, 241, 241, 0.8); */
-    background-color: transparent;
-    color: rgba(31, 31, 31, 0.6);
-    border-radius: 4px;
-    padding: 0 12px;
+    border: none;
+    border-radius: 0;
 }
 
 window#waybar {
-    background-color: rgba(241, 241, 241, 0.8);
-    color: rgba(241, 241, 241, 0.9);
     transition-property: background-color;
     transition-duration: .5s;
     border-radius: 4px;
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
-}
-
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
-
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
+/* --- Module Groupings --- */
+.modules-left, .modules-right {
+    border-radius: 4px;
+    padding: 0 12px;
 }
 
 button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    /* box-shadow: inset 0 -3px transparent; */
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0;
     margin: 0;
     padding: 2px 6px;
-    background-color: transparent;
 }
 
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-    /* background: inherit; */
-    color: #F09260;
-}
-
-/* you can set a style on hover for any module like this */
-#pulseaudio:hover {
-    color: #FF6F21;
-}
-
-#workspaces button.urgent {
-    color: #FF6F21;
-}
-
-#workspaces button.active {
-    color: #FC3D03;
-}
-
-
-
-#mode {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-#power-profiles-daemon,
-#mpd {
-    background-color: transparent;
+/* --- Base Module Structure --- */
+/* This rule applies padding to all listed modules efficiently */
+#clock, #battery, #cpu, #memory, #disk, #temperature, #backlight, #network,
+#pulseaudio, #wireplumber, #custom-media, #tray, #mode, #idle_inhibitor,
+#scratchpad, #power-profiles-daemon, #mpd {
     padding: 0px 4px;
-    color: rgba(31, 31, 31, 0.9);
 }
 
+/* --- Specific Module Structure --- */
 
-/* If workspaces is the leftmost module, omit left margin */
-/* .modules-left>widget:first-child>#workspaces {
-    margin-left: 0;
-} */
-
-/* If workspaces is the rightmost module, omit right margin */
-/* .modules-right>widget:last-child>#workspaces {
-    margin-right: 0;
-} */
-
-#battery.charging,
-#battery.plugged {
-    color: #26A65B;
-}
-
-@keyframes blink {
-    to {
-        color: #000000;
-    }
-}
-
-/* Using steps() instead of linear as a timing function to limit cpu usage */
-#battery.critical:not(.charging) {
-    color: #f53c3c;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-
-#power-profiles-daemon.performance {
-    color: #f53c3c;
-}
-
-#power-profiles-daemon.balanced {
-    color: #2980b9;
-}
-
-#power-profiles-daemon.power-saver {
-    color: #2ecc71;
-}
-
-label:focus {
-    color: #000000;
-}
-
-#cpu {
-    color: #16B559;
+#cpu, #memory, #disk {
     padding-right: 8px;
-}
-
-#memory {
-    color: #9b59b6;
-    padding-right: 8px;
-}
-
-#disk {
-    color: #964B00;
-    padding-right: 8px;
-}
-
-#backlight {
-    color: #90b1b1;
-}
-
-#network {
-    color: #2980b9;
-}
-
-#network.disconnected {
-    color: #f53c3c;
-}
-
-#pulseaudio {
-    color: #FC3D00;
-}
-
-#pulseaudio.muted {
-    color: #90B1B1;
-}
-
-#wireplumber {
-    color: rgba(31, 31, 31, 0.9);
-}
-
-#wireplumber.muted {
-    color: #f53c3c;
 }
 
 #custom-media {
-    color: #66cc99;
-    /* color: #2a5c45; */
     min-width: 100px;
 }
 
-#custom-media.custom-spotify {
-    color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-    color: #ffa000;
-}
-
-#temperature {
-    color: #f0932b;
-}
-
-#temperature.critical {
-    color: #eb4d4b;
-}
-
 #tray {
-    color: #2980b9;
     border-radius: 4px;
     margin-bottom: 2px;
 }
 
-#tray>.passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray>.needs-attention {
-    -gtk-icon-effect: highlight;
-    color: #eb4d4b;
-}
-
-#idle_inhibitor {
-    color: rgba(31, 31, 31, 0.5);
-}
-
-#idle_inhibitor.activated {
-    color: rgba(31, 31, 31, 0.9);
-}
-
-#mpd {
-    color: #66cc99;
-}
-
-#mpd.disconnected {
-    color: #f53c3c;
-}
-
-#mpd.stopped {
-    color: #90b1b1;
-}
-
-#mpd.paused {
-    color: #51a37a;
-}
-
-
 #keyboard-state {
-    color: rgba(31, 31, 31, 0.9);
     min-width: 16px;
 }
 
@@ -281,36 +60,18 @@ label:focus {
     padding: 0 5px;
 }
 
-#keyboard-state>label.locked {
-    color: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad {
-    color: rgba(0, 0, 0, 0.2);
-}
-
-#privacy-item {
-    color: rgba(31, 31, 31, 0.9);
-}
-
-#privacy-item.screenshare {
-    color: #cf5700;
-}
-
-#privacy-item.audio-in {
-    color: #1ca000;
-}
-
-#privacy-item.audio-out {
-    color: #0069d4;
-}
-
-#custom-power {
-  color: #FC3D03;
-  min-width: 16px;
-}
-
+#custom-power,
 #custom-notification {
   min-width: 16px;
 }
 
+
+/* --- Animations --- */
+/* The animation's behavior is structural, but its color is in theme.css */
+#battery.critical:not(.charging) {
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}

@@ -1,0 +1,137 @@
+/* theme.css - Light Theme Example */
+
+/* --- Global Colors --- */
+window#waybar {
+    background-color: rgba(31, 31, 31, 0.95);
+    color: rgba(141, 141, 141, 0.8);
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+.modules-left, .modules-right {
+    background-color: transparent;
+    color: rgba(141, 141, 141, 0.9);
+}
+
+/* --- Base Module Colors --- */
+#clock, #battery, #cpu, #memory, #disk, #temperature, #backlight, #network,
+#pulseaudio, #wireplumber, #custom-media, #tray, #mode, #idle_inhibitor,
+#scratchpad, #power-profiles-daemon, #mpd, #keyboard-state, #privacy-item {
+    background-color: transparent;
+    color: rgba(141, 141, 141, 0.9);
+}
+
+button {
+    color: rgba(141, 141, 141, 1);
+    background-color: transparent;
+}
+
+button:hover {
+    color: #F09260;
+}
+
+/* --- Specific Module States & Colors --- */
+
+#workspaces button.active {
+    color: #FC3D03;
+}
+
+#workspaces button.urgent {
+    color: #FF6F21;
+}
+
+#pulseaudio:hover {
+    color: #FF6F21;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #26A65B;
+}
+
+@keyframes blink {
+    to {
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    color: #f53c3c;
+}
+
+#power-profiles-daemon.performance {
+    color: #f53c3c;
+}
+#power-profiles-daemon.balanced {
+    color: #2980b9;
+}
+#power-profiles-daemon.power-saver {
+    color: #2ecc71;
+}
+
+#cpu {
+    color: #16B559;
+}
+
+#memory {
+    color: #9b59b6;
+}
+
+#disk {
+    color: #964B00;
+}
+
+#network.disconnected {
+    color: #f53c3c;
+}
+
+#pulseaudio {
+    color: #FC3D00;
+}
+
+#pulseaudio.muted {
+    color: #90B1B1;
+}
+
+#temperature.critical {
+    color: #eb4d4b;
+}
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+    color: #eb4d4b;
+}
+
+#tray>.passive {
+    -gtk-icon-effect: dim;
+}
+
+#idle_inhibitor.activated {
+    color: rgba(31, 31, 31, 0.9);
+}
+
+#mpd.disconnected {
+    color: #f53c3c;
+}
+
+#mpd.stopped {
+    color: #90b1b1;
+}
+
+#mpd.paused {
+    color: #51a37a;
+}
+
+#keyboard-state>label.locked {
+    color: rgba(0, 0, 0, 0.2);
+}
+
+#custom-power {
+  color: #FC3D03;
+}
+
+#privacy-item.screenshare { color: #cf5700; }
+#privacy-item.audio-in { color: #1ca000; }
+#privacy-item.audio-out { color: #0069d4; }
