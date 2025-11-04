@@ -12,7 +12,7 @@ window#waybar.hidden {
 
 .modules-left, .modules-right {
     background-color: transparent;
-    color: rgba(31, 31, 31, 0.6);
+    color: rgba(50, 48, 47, 0.6);
 }
 
 /* --- Base Module Colors --- */
@@ -20,7 +20,7 @@ window#waybar.hidden {
 #pulseaudio, #wireplumber, #custom-media, #tray, #mode, #idle_inhibitor,
 #scratchpad, #power-profiles-daemon, #mpd, #keyboard-state, #privacy-item {
     background-color: transparent;
-    color: rgba(31, 31, 31, 0.9);
+    color: rgba(50, 48, 47, 0.9);
 }
 
 button {
@@ -29,26 +29,26 @@ button {
 }
 
 button:hover {
-    color: #F09260;
+    color: #458588;
 }
 
 /* --- Specific Module States & Colors --- */
 
 #workspaces button.active {
-    color: #FC3D03;
+    color: #458588;
 }
 
 #workspaces button.urgent {
-    color: #FF6F21;
+    color: #cc241d;
 }
 
 #pulseaudio:hover {
-    color: #FF6F21;
+    color: #83a598;
 }
 
 #battery.charging,
 #battery.plugged {
-    color: #26A65B;
+    color: #689d6a;
 }
 
 @keyframes blink {
@@ -58,7 +58,7 @@ button:hover {
 }
 
 #battery.critical:not(.charging) {
-    color: #f53c3c;
+    color: #cc241d;
 }
 
 #power-profiles-daemon.performance {
@@ -84,11 +84,11 @@ button:hover {
 }
 
 #network.disconnected {
-    color: #f53c3c;
+    color: #83a598;
 }
 
 #pulseaudio {
-    color: #FC3D00;
+    color: #458588;
 }
 
 #pulseaudio.muted {
@@ -129,9 +129,9 @@ button:hover {
 }
 
 #custom-power {
-  color: #FC3D03;
+  color: #458588;
 }
 
-#privacy-item.screenshare { color: #cf5700; }
-#privacy-item.audio-in { color: #1ca000; }
-#privacy-item.audio-out { color: #0069d4; }
+#privacy-item.screenshare { color: #689d6a; }
+#privacy-item.audio-in { color: #689d6a; }
+#privacy-item.audio-out { color: #689d6a; }

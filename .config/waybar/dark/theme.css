@@ -43,7 +43,7 @@ button:hover {
 }
 
 #pulseaudio:hover {
-    color: #FF6F21;
+    color: #83a598;
 }
 
 #battery.charging,
@@ -58,7 +58,7 @@ button:hover {
 }
 
 #battery.critical:not(.charging) {
-    color: #f53c3c;
+    color: #cc241d;
 }
 
 #power-profiles-daemon.performance {
