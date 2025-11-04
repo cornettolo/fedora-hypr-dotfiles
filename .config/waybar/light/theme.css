@@ -2,8 +2,8 @@
 
 /* --- Global Colors --- */
 window#waybar {
-    background-color: rgba(241, 241, 241, 0.8);
-    color: rgba(31, 31, 31, 0.6);
+    background-color: rgba(251, 241, 199, 0.8);
+    color: rgba(50, 48, 47, 0.6);
 }
 
 window#waybar.hidden {

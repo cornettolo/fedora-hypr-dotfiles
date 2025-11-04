@@ -2,14 +2,14 @@
 
 /* --- COLOR DEFINITIONS --- */
 /* To create a new theme, just change the values in this section! */
-@define-color background                 rgba(31, 31, 31, 0.95);
-@define-color background-alt             rgba(30, 30, 30, 0.9);
-@define-color background-alt-darker      rgba(20, 20, 20, 0.9);
-@define-color accent-normal    	         #fc3d03;
-@define-color accent-error     	         #ff6f21;
-@define-color bordercolor                #fc3d03; /* This variable wasn't used, but is kept for consistency */
-@define-color fontcolor 	               rgb(181, 181, 181);
-@define-color fontaltcolor 	             rgb(100, 100, 100);
+@define-color background                 rgba(40, 40, 40, 1);
+@define-color background-alt             rgba(50, 48, 47, 1);
+@define-color background-alt-darker      rgba(29, 32, 33, 1 );
+@define-color accent-normal    	         #458588;
+@define-color accent-error     	         #cc241d;
+@define-color bordercolor                #458588; /* This variable wasn't used, but is kept for consistency */
+@define-color fontcolor 	               rgb(251, 241, 199);
+@define-color fontaltcolor 	             rgb(213, 196, 161);
 
 /* --- COLOR APPLICATION --- */
 .notification {
@@ -22,7 +22,7 @@
 .notification:focus,
 .notification-default-action:hover,
 .notification-default-action:focus {
-    background: @background-alt-darker;
+    background: @background-alt;
     color: @fontcolor;
 }
 
@@ -96,7 +96,11 @@
 
 button, .widget-buttons-grid, .widget-dnd,
 .widget-volume, .widget-backlight {
-  background: @background-alt-darker;
+  background: @background-alt;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button {
+  background: @background;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {

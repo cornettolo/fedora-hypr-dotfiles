@@ -4,8 +4,8 @@
   "position": "top", // Waybar position (top|bottom|left|right)
   // "height": 18,
   "margin-top": 8,
-  "margin-left": 8,
-  "margin-right": 8,
+  "margin-left": 14,
+  "margin-right": 14,
   // "width": 1280, // Waybar width
   "spacing": 12, // Gaps between modules (4px)
   // Choose the order of the modules
@@ -17,23 +17,19 @@
     "custom/media"
   ],
   "modules-center": [
+    "clock"
   ],
   "modules-right": [
     "idle_inhibitor",
     "privacy",
     "pulseaudio",
     "network",
-    //    "power-profiles-daemon",
-    "cpu",
-    "memory",
-    // "temperature",
     "backlight",
     "hyprland/language",
     "bluetooth",
     "battery",
     "tray",
     "custom/notification",
-    "clock",
     "custom/power"
   ],
   // Modules configuration
