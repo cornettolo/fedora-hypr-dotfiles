@@ -17,18 +17,18 @@ fi
 # Set the theme based on the user's selection.
 if [ "$selected" == "Light" ]; then
   THEME="light"
-  GTK_THEME="Adwaita"
+  GTK_THEME="Gruvbox-Light"
 elif [ "$selected" == "Dark" ]; then
   THEME="dark"
-  GTK_THEME="Adwaita"
+  GTK_THEME="Gruvbox-Dark"
 fi
 
 # --- Apply GTK Theme ---
 # Use gsettings to change the GTK theme and color-scheme preference.
 gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME"
-if [ "$THEME" == "light" ]; then
+if [ "$selected" == "Light" ]; then
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
-else
+elif [ "$selected" == "Dark" ]; then
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 fi
 
@@ -53,6 +53,10 @@ switch_config "kitty"
 switch_config "waybar"
 switch_config "swaync"
 switch_config "rofi"
+switch_config "gtk-3.0"
+switch_config "gtk-4.0"
+switch_config "xsettingsd"
+switch_config "theme"
 
 # --- Reload Applications ---
 
@@ -73,5 +77,8 @@ fi
 if pgrep -x "swaync" >/dev/null; then
   swaync-client --reload-config && swaync-client --reload-css
 fi
+
+# Reload wallpaper
+hyprctl hyprpaper reload ,"~/.config/theme/wallpaper1"
 
 echo "Theme successfully switched to $THEME"

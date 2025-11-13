@@ -5,7 +5,7 @@
 
 /* --- Global Structure & Font --- */
 * {
-    font-family: 'DepartureMono Nerd Font', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
+    font-family: 'DroidSansM Nerd Font Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
     font-size: 10;
     font-weight: 800;
     border: none;
@@ -15,18 +15,19 @@
 window#waybar {
     transition-property: background-color;
     transition-duration: .5s;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
 /* --- Module Groupings --- */
-.modules-left, .modules-right {
-    border-radius: 4px;
-    padding: 0 12px;
+.modules-left, .modules-right, .modules-center {
+    border-radius: 6px;
+    padding: 0 8px;
+    margin: 2px;
 }
 
 button {
     margin: 0;
-    padding: 2px 6px;
+    padding: 0px 6px;
 }
 
 /* --- Base Module Structure --- */

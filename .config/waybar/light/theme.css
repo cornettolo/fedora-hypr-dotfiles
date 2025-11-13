@@ -2,8 +2,8 @@
 
 /* --- Global Colors --- */
 window#waybar {
-    background-color: rgba(251, 241, 199, 0.8);
-    color: rgba(50, 48, 47, 0.6);
+    background-color: rgba(251, 241, 199, 0.65);
+    color: rgba(50, 48, 47, 1);
 }
 
 window#waybar.hidden {
@@ -12,7 +12,7 @@ window#waybar.hidden {
 
 .modules-left, .modules-right {
     background-color: transparent;
-    color: rgba(50, 48, 47, 0.6);
+    color: rgba(50, 48, 47, 1);
 }
 
 /* --- Base Module Colors --- */
@@ -20,11 +20,11 @@ window#waybar.hidden {
 #pulseaudio, #wireplumber, #custom-media, #tray, #mode, #idle_inhibitor,
 #scratchpad, #power-profiles-daemon, #mpd, #keyboard-state, #privacy-item {
     background-color: transparent;
-    color: rgba(50, 48, 47, 0.9);
+    color: rgba(50, 48, 47, 1);
 }
 
 button {
-    color: rgba(31, 31, 31, 1);
+    color: #282828;
     background-color: transparent;
 }
 
@@ -109,7 +109,7 @@ button:hover {
 }
 
 #idle_inhibitor.activated {
-    color: rgba(31, 31, 31, 0.9);
+    color: rgba(69, 133, 136, 0.9);
 }
 
 #mpd.disconnected {

@@ -137,3 +137,5 @@ export NVM_DIR="$HOME/.config/nvm"
 export JAVA_HOME='/usr/lib/jvm/temurin-21-jdk'
 export MAVEN_HOME='/usr/share/maven'
 export EDITOR='/usr/bin/nvim'
+
+eval "$(zoxide init zsh)"

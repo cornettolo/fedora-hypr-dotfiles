@@ -1,0 +1,48 @@
+" === My LazyVim-style IntelliJ Config (FINAL - v3) ===
+
+let mapleader = ' '
+set surround
+set clipboard=unnamedplus
+
+"================================================================
+" UI & Panel Management
+"================================================================
+nnoremap <leader>z :action ToggleDistractionFreeMode<CR>
+nnoremap <leader>e :action ProjectView<CR>
+nnoremap <leader>' :action Terminal<CR>
+nnoremap <leader>x :action HideActiveToolWindow<CR>
+
+"================================================================
+" Find & Search
+"================================================================
+nnoremap <leader>f :action GotoFile<CR>
+nnoremap <leader>sg :action FindInPath<CR>
+nnoremap <leader>sf :action Find<CR>
+
+"================================================================
+" App & Editor Control (CORRECTED)
+"================================================================
+nnoremap <leader>w :action SaveAll<CR>
+
+" THIS IS THE FIX: Use Vim's native :q command
+nnoremap <leader>q :q<CR>
+
+nnoremap <leader>qo :action CloseAllEditorsButActive<CR>
+nnoremap <leader>qa :action CloseAllEditors<CR>
+
+"================================================================
+" Buffer / Tab Navigation
+"================================================================
+nnoremap L :action NextTab<CR>
+nnoremap H :action PreviousTab<CR>
+
+"================================================================
+" Code Actions
+"================================================================
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap K :action QuickJavaDoc<CR>
+nnoremap <leader>r :action RenameElement<CR>
+nnoremap <leader>ca :action ShowIntentionActions<CR>
+
+
