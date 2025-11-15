@@ -6,8 +6,8 @@
   "margin-top": 8,
   "margin-left": 14,
   "margin-right": 14,
-  // "width": 1280, // Waybar width
-  "spacing": 12, // Gaps between modules (4px)
+  //"width": 1280, // Waybar width
+  "spacing": 12, // Gaps between modules
   // Choose the order of the modules
   "modules-left": [
     "hyprland/workspaces",

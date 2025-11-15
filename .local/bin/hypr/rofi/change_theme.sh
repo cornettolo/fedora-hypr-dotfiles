@@ -18,14 +18,17 @@ fi
 if [ "$selected" == "Light" ]; then
   THEME="light"
   GTK_THEME="Gruvbox-Light"
+  ICON_THEME="Gruvbox-Plus-Light"
 elif [ "$selected" == "Dark" ]; then
   THEME="dark"
   GTK_THEME="Gruvbox-Dark"
+  ICON_THEME="Gruvbox-Plus-Dark"
 fi
 
 # --- Apply GTK Theme ---
 # Use gsettings to change the GTK theme and color-scheme preference.
 gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME"
+gsettings set org.gnome.desktop.interface icon-theme "$ICON_THEME"
 if [ "$selected" == "Light" ]; then
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
 elif [ "$selected" == "Dark" ]; then
