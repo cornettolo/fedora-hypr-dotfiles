@@ -5,8 +5,8 @@
 
 /* --- Global Structure & Font --- */
 * {
-    font-family: 'DroidSansM Nerd Font Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
-    font-size: 10;
+    font-family: 'DroidSansM Nerd Font Propo', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
+    font-size: 8;
     font-weight: 800;
     border: none;
     border-radius: 0;
@@ -22,7 +22,7 @@ window#waybar {
 .modules-left, .modules-right, .modules-center {
     border-radius: 6px;
     padding: 0 8px;
-    margin: 2px;
+    margin: 0 2px;
 }
 
 button {
@@ -50,7 +50,6 @@ button {
 
 #tray {
     border-radius: 4px;
-    margin-bottom: 2px;
 }
 
 #keyboard-state {
