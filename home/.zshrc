@@ -112,6 +112,9 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+source <(kubectl completion zsh)
+source <(kind completion zsh)
+
 function yazi() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
   command yazi "$@" --cwd-file="$tmp"  # 👈 Make sure this line has `command`
@@ -139,3 +142,5 @@ export MAVEN_HOME='/usr/share/maven'
 export EDITOR='/usr/bin/nvim'
 
 eval "$(zoxide init zsh)"
+
+
