@@ -29,15 +29,7 @@ merge_folder() {
 
   mkdir -p "$dest"
 
-  # RSYNC EXPLANATION:
-  # -a : Archive mode (recurses, preserves permissions, times, etc.)
-  # -v : Verbose
-  # -b : Make backups of files we are about to overwrite
-  # --backup-dir : Where to put the backups
-  # --suffix : Empty suffix (keep original filename in backup dir)
-  # The trailing slash on source/ is CRITICAL. It means "contents of source".
-
-  rsync -avb \
+  rsync -ab \
     --backup-dir="$BACKUP_ROOT/$name" \
     --suffix="" \
     "$source/" "$dest/"
