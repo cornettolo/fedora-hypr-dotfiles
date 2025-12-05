@@ -73,7 +73,7 @@ fi
 
 # Reload Waybar by sending a SIGUSR2 signal.
 if pgrep -x "waybar" >/dev/null; then
-  killall -SIGUSR2 waybar
+  pkill waybar && nohup waybar >/dev/null 2>&1 &
 fi
 
 # Reload SwayNC to apply the new theme.
