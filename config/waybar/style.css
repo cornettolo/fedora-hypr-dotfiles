@@ -6,7 +6,7 @@
 /* --- Global Structure & Font --- */
 * {
     font-family: 'DroidSansM Nerd Font Propo', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
-    font-size: 8;
+    font-size: 10;
     font-weight: 800;
     border: none;
     border-radius: 0;
@@ -22,12 +22,12 @@ window#waybar {
 .modules-left, .modules-right, .modules-center {
     border-radius: 6px;
     padding: 0 8px;
-    margin: 0 2px;
+    margin: 4px 4px;
 }
 
 button {
-    margin: 0;
-    padding: 0px 6px;
+    padding: 0px 4px;
+    border-radius: 6px;
 }
 
 /* --- Base Module Structure --- */
