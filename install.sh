@@ -1,4 +1,4 @@
 #!/bin/bash
 
-bash install_dependencies.sh
-bash apply_theme.sh
+bash install/dependencies.sh
+bash apply.sh
