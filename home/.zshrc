@@ -143,4 +143,7 @@ export EDITOR='/usr/bin/nvim'
 
 eval "$(zoxide init zsh)"
 
-
+alias notes="(z notes && nvim .)"
+alias dots="(z dotfiles && nvim .)"
+alias vi="(nvim .)"
+alias apply-dots="(z dotfiles && apply.sh)"
