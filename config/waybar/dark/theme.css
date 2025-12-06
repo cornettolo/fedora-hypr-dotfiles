@@ -54,7 +54,7 @@ button:hover {
 
 @keyframes blink {
     to {
-        color: #000000;
+      color: rgba(251, 241, 199, 0.8);
     }
 }
 
