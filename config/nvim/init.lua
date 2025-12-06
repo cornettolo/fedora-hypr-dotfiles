@@ -65,16 +65,21 @@ if vim.g.vscode then
   keymap("n", "<leader>sj", vscode_command("workbench.action.moveEditorToBelowGroup"), opts)
 
   -- -----------------------------------------------------------
-  -- UI & PANELS (TOGGLES)
+  -- UI & SIDEBAR NAVIGATION
   -- -----------------------------------------------------------
-  -- <leader>e: Toggle Sidebar Visibility (Explorer)
-  keymap("n", "<leader>e", vscode_command("workbench.action.toggleSidebarVisibility"), opts)
 
-  -- <leader>p: Toggle Bottom Panel Visibility (Terminal/Output)
-  keymap("n", "<leader>p", vscode_command("workbench.action.togglePanel"), opts)
+  -- <leader>e: Switch to File Explorer Sidebar
+  keymap("n", "<leader>e", vscode_command("workbench.view.explorer"), opts)
 
-  -- <leader>x: Explicitly Close Bottom Panel
-  keymap("n", "<leader>x", vscode_command("workbench.action.closePanel"), opts)
+  -- <leader>f: Switch to Search Sidebar (Find in Files)
+  keymap("n", "<leader>f", vscode_command("workbench.view.search"), opts)
+
+  -- <leader>v: Switch to Source Control / Git Sidebar ("Version control")
+  keymap("n", "<leader>v", vscode_command("workbench.view.scm"), opts)
+
+  -- <leader>z: Toggle Sidebar Visibility
+  -- (Hides/Shows whichever sidebar view is currently active)
+  keymap("n", "<leader>z", vscode_command("workbench.action.toggleSidebarVisibility"), opts)
 
   -- -----------------------------------------------------------
   -- SEARCH & FILES
@@ -87,6 +92,13 @@ if vim.g.vscode then
 
   -- <leader>sf: Just focus the search panel
   keymap("n", "<leader>sf", vscode_command("workbench.view.search"), opts)
+
+  -- -----------------------------------------------------------
+  -- RESTORE QUICK OPEN
+  -- -----------------------------------------------------------
+  -- Since <leader>f is now the Search Sidebar, let's map Quick Open
+  -- (fuzzy find files) to <leader><space>, just like LazyVim.
+  keymap("n", "<leader><space>", vscode_command("workbench.action.quickOpen"), opts)
 else
   -- =================================================================
   -- 3. TERMINAL NEOVIM CONFIGURATION

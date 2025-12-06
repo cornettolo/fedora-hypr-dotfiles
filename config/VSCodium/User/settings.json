@@ -33,7 +33,6 @@
   "terminal.integrated.fontLigatures.enabled": true,
   "editor.inlayHints.padding": true,
   "editor.bracketPairColorization.enabled": true,
-  "workbench.sideBar.location": "right",
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -62,6 +61,12 @@
     "other": "off"
   },
   "editor.quickSuggestionsDelay": 20,
-  "editor.autoClosingBrackets": "beforeWhitespace"
+  "editor.autoClosingBrackets": "beforeWhitespace",
+  "window.menuBarVisibility": "compact",
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "window.enableMenuBarMnemonics": false,
+  "window.titleBarStyle": "native",
+  "window.menuStyle": "custom",
+  "window.customTitleBarVisibility": "never"
 }
-
