@@ -3,9 +3,9 @@
   "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
   // "height": 18,
-  "margin-top": 8,
-  "margin-left": 14,
-  "margin-right": 14,
+  "margin-top": 0,
+  "margin-left": 0,
+  "margin-right": 0,
   //"width": 1280, // Waybar width
   "spacing": 12, // Gaps between modules
   // Choose the order of the modules
@@ -21,6 +21,7 @@
   ],
   "modules-right": [
     "idle_inhibitor",
+    "custom/mic_in_use",
     "privacy",
     "pulseaudio",
     "network",
@@ -176,11 +177,11 @@
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "{essid} ({signalStrength}%)  ",
+    "format-wifi": "{essid} ({signalStrength}%) ",
     "format-ethernet": "{ipaddr}/{cidr}  ",
     "tooltip-format": "{ifname} via {gwaddr}  ",
     "format-linked": "{ifname} (No IP)  ",
-    "format-disconnected": "Disconnected ⚠ ",
+    "format-disconnected": "Disconnected ⚠",
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "pulseaudio": {
@@ -189,19 +190,19 @@
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": " {format_source}",
-    "format-source": "{volume}%  ",
-    "format-source-muted": " ",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
     "format-icons": {
-      "headphone": " ",
-      "hands-free": " ",
-      "headset": " ",
-      "phone": " ",
-      "portable": " ",
-      "car": " ",
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
       "default": [
-        " ",
-        " ",
-        " " ]
+        "",
+        "",
+        "" ]
     },
     "on-click": "pavucontrol"
   },
@@ -210,8 +211,8 @@
     "return-type": "json",
     "max-length": 40,
     "format-icons": {
-      "spotify": " ",
-      "default": "🎜 "
+      "spotify": "",
+      "default": "🎜"
     },
     "escape": true,
     "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
@@ -286,4 +287,18 @@
       }
     ]
   },
+	"custom/mic_in_use": {
+		"exec-if": "~/.local/bin/hypr/waybar/mic_in_use.sh",
+		"exec": "~/.local/bin/hypr/waybar/audio_source_status.sh",
+		"return-type": "json",
+		"format": "{icon}",
+		"format-icons": {
+			"muted": "󰍭",
+			"unmuted": "󰍬"
+		},
+		"on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 2%+ --limit 1",
+		"on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 2%- --limit 1",
+		"on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
+		"interval": 1
+	}
 }

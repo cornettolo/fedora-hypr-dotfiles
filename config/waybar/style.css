@@ -15,7 +15,7 @@
 window#waybar {
     transition-property: background-color;
     transition-duration: .5s;
-    border-radius: 6px;
+    border-radius: 0px;
 }
 
 /* --- Module Groupings --- */
