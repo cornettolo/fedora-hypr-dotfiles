@@ -65,9 +65,7 @@ button {
   min-width: 16px;
 }
 
-
 /* --- Animations --- */
-/* The animation's behavior is structural, but its color is in theme.css */
 #battery.critical:not(.charging) {
     animation-name: blink;
     animation-duration: 0.5s;

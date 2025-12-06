@@ -268,12 +268,12 @@
         "type": "audio-out",
         "tooltip": true,
         "tooltip-icon-size": 12
-      },
-      {
-        "type": "audio-in",
-        "tooltip": true,
-        "tooltip-icon-size": 12
       }
+      // {
+      //   "type": "audio-in",
+      //   "tooltip": true,
+      //   "tooltip-icon-size": 12
+      // }
     ],
     "ignore-monitor": true,
     "ignore": [
@@ -299,6 +299,6 @@
 		"on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 2%+ --limit 1",
 		"on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 2%- --limit 1",
 		"on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
-		"interval": 1
+		"interval": 2
 	}
 }
