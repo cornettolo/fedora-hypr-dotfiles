@@ -68,5 +68,7 @@
   "window.enableMenuBarMnemonics": false,
   "window.titleBarStyle": "native",
   "window.menuStyle": "custom",
-  "window.customTitleBarVisibility": "never"
+  "window.customTitleBarVisibility": "never",
+  "editor.mouseWheelZoom": true,
+  "keyboard.dispatch": "keyCode"
 }
