@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ==========================================
-# 1. VARIABLES & SETUP
+# VARIABLES & SETUP
 # ==========================================
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
@@ -13,7 +13,7 @@ BLUE='\033[0;34m'
 NC='\033[0m'
 
 # ==========================================
-# 2. HELPER FUNCTION: MERGE
+# HELPER FUNCTION: MERGE
 # ==========================================
 # This function merges contents. It does NOT delete the destination folder.
 merge_folder() {
@@ -47,7 +47,7 @@ echo "Existing symlinks and extra files will stay untouched."
 echo "Overwritten files backed up to: $BACKUP_ROOT"
 echo "------------------------------------------"
 
-# --- A. Home Directory Files ---
+# --- Home Directory Files ---
 # We loop files here because we don't want to rsync the whole home folder!
 if [ -d "$DOTFILES_DIR/home" ]; then
   echo "Processing Home Files..."
@@ -59,7 +59,7 @@ if [ -d "$DOTFILES_DIR/home" ]; then
   done
 fi
 
-# --- B. Config Directory ---
+# --- Config Directory ---
 # Loops through folders in repo/config (e.g. nvim, alacritty)
 # and merges them into ~/.config/nvim, ~/.config/alacritty
 if [ -d "$DOTFILES_DIR/config" ]; then
@@ -70,11 +70,18 @@ if [ -d "$DOTFILES_DIR/config" ]; then
   done
 fi
 
-# --- C. Local Bin Hypr ---
+# --- Local Bin Hypr ---
 # Merges repo/local/bin/hypr into ~/.local/bin/hypr
 if [ -d "$DOTFILES_DIR/local/bin/hypr" ]; then
   echo "Processing Hypr scripts..."
   merge_folder "$DOTFILES_DIR/local/bin/hypr" "$HOME/.local/bin/hypr"
+fi
+
+# --- Zsh ---
+# Merges repo/zsh into ~/.zsh
+if [ -d "$DOTFILES_DIR/zsh" ]; then
+  echo "Processing Zsh scripts..."
+  merge_folder "$DOTFILES_DIR/zsh" "$HOME/.zsh"
 fi
 
 echo "------------------------------------------"
