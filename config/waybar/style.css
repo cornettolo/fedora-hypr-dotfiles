@@ -6,10 +6,14 @@
 /* --- Global Structure & Font --- */
 * {
     font-family: 'DroidSansM Nerd Font Propo', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
-    font-size: 10;
+    font-size: 10px;
     font-weight: 800;
     border: none;
     border-radius: 0;
+
+    min-height: 0;
+    margin: 0;
+    padding: 0;
 }
 
 window#waybar {
@@ -19,28 +23,52 @@ window#waybar {
 }
 
 /* --- Module Groupings --- */
-.modules-left, .modules-right, .modules-center {
+.modules-left,
+.modules-right,
+.modules-center {
     border-radius: 6px;
     padding: 0 8px;
-    margin: 4px 4px;
+    margin: 4px;
 }
 
-button {
-    padding: 0px 4px;
-    border-radius: 6px;
+#workspaces {
+    border-radius: 4px;
 }
+
+#workspaces button {
+    padding: 4px;
+    border-radius: 4px;
+}
+
 
 /* --- Base Module Structure --- */
 /* This rule applies padding to all listed modules efficiently */
-#clock, #battery, #cpu, #memory, #disk, #temperature, #backlight, #network,
-#pulseaudio, #wireplumber, #custom-media, #tray, #mode, #idle_inhibitor,
-#scratchpad, #power-profiles-daemon, #mpd {
-    padding: 0px 4px;
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#custom-mic_in_use,
+#mpd {
+    padding: 4px 4px;
 }
 
 /* --- Specific Module Structure --- */
 
-#cpu, #memory, #disk {
+#cpu,
+#memory,
+#disk {
     padding-right: 8px;
 }
 
@@ -62,7 +90,7 @@ button {
 
 #custom-power,
 #custom-notification {
-  min-width: 16px;
+    min-width: 16px;
 }
 
 /* --- Animations --- */
