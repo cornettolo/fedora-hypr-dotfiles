@@ -11,8 +11,8 @@
   // Choose the order of the modules
   "modules-left": [
     "hyprland/workspaces",
+    "mpris"
     // "hyprland/window",
-    "custom/spotify"
   ],
   "modules-center": [
     "clock"
@@ -32,8 +32,36 @@
   ],
   // Modules configuration
   "hyprland/workspaces": {
-    "disable-scroll": false,
-    "all-outputs": false
+    "format": "{icon} {windows}",
+    "format-window-separator": " ",
+    "window-rewrite-default": "󱓼",
+    "window-rewrite": {
+      "class<zen>": "",
+      "class<brave>": "",
+      "class<intellij>": "",
+      "kitty": "",
+      "telegram": "",
+      "slack": "",
+      "codium": "󰨞",
+      "spotify": "󰓇",
+      "class<discord>": "",
+      "steam": "󰓓"
+    }
+  },
+  "mpris": {
+    "format": "{player_icon} {title} - {artist} ",
+    "format-paused": "{status_icon} {title} - {artist}",
+    "tooltip": true,
+    "tooltip-format": "{dynamic}",
+    "player-icons": {
+      "default": "▶",
+      "spotify": "󰓇 ▶",
+      "mpv": "🎵"
+    },
+    "status-icons": {
+      "paused": "⏸"
+    }
+    // "ignored-players": ["firefox"]
   },
   "keyboard-state": {
     "numlock": true,
@@ -178,16 +206,6 @@
     },
     "on-click": "pavucontrol",
     "on-click-right": "wpctl set-mute @DEFAULT_SOURCE@ toggle"
-  },
-  "custom/spotify": {
-    "type": "script",
-    "format": "{icon} {text}",
-    "return-type": "json",
-    "on-click": "playerctl -p spotify play-pause",
-    "on-scroll-up": "playerctl -p spotify previous",
-    "on-scroll-down": "playerctl -p spotify next",
-    "max-length": 50,
-    "exec": "$HOME/.local/bin/hypr/waybar/spotifyplayer.sh"
   },
   "custom/power": {
     "class": "power-button",
