@@ -187,7 +187,6 @@
     "on-scroll-up": "playerctl -p spotify previous",
     "on-scroll-down": "playerctl -p spotify next",
     "max-length": 50,
-    "tooltip": true,
     "exec": "$HOME/.local/bin/hypr/waybar/spotifyplayer.sh"
   },
   "custom/power": {

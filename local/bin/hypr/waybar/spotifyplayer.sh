@@ -34,12 +34,12 @@ generate_json() {
     fi
 }
 
-# Initial output on Waybar start
 generate_json
-
-# Start monitoring playerctl for changes
-# The `--follow` flag makes playerctl block until an event occurs (e.g., play/pause/new track).
-# When an event happens, it prints the player status, triggering the loop to continue.
-playerctl --follow status 2> /dev/null | while read -r status; do
-    generate_json
+# Monitor D-Bus signals for Mpris events
+# This monitors both PlaybackStatus and Metadata changes, which is more reliable.
+dbus-monitor --session "interface='org.freedesktop.DBus.Properties',member='PropertiesChanged',arg0='org.mpris.MediaPlayer2.Player'" | while read -r line; do
+    # Only regenerate the JSON when a PropertiesChanged signal is detected
+    if echo "$line" | grep -q "PropertiesChanged"; then
+        generate_json
+    fi
 done
