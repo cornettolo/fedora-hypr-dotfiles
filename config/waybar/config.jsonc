@@ -10,12 +10,12 @@
   "spacing": 12, // Gaps between modules
   // Choose the order of the modules
   "modules-left": [
-    "hyprland/workspaces"
+    "hyprland/workspaces",
     // "hyprland/window",
-    // "custom/media"
+    "custom/spotify"
   ],
   "modules-center": [
-    "clock",
+    "clock"
   ],
   "modules-right": [
     "privacy",
@@ -60,32 +60,6 @@
   "hyprland/language": {
     "format": " 󰌌 {short} {variant} ",
     // "format-us": "US ({variant})",
-  },
-  "mpd": {
-    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-    "format-disconnected": "Disconnected ",
-    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-    "unknown-tag": "N/A",
-    "interval": 5,
-    "consume-icons": {
-      "on": " "
-    },
-    "random-icons": {
-      "off": "<span color=\"#f53c3c\"></span> ",
-      "on": " "
-    },
-    "repeat-icons": {
-      "on": " "
-    },
-    "single-icons": {
-      "on": "1 "
-    },
-    "state-icons": {
-      "paused": "",
-      "playing": ""
-    },
-    "tooltip-format": "MPD (connected)",
-    "tooltip-format-disconnected": "MPD (disconnected)"
   },
   "idle_inhibitor": {
     "format": "{icon}",
@@ -205,17 +179,16 @@
     "on-click": "pavucontrol",
     "on-click-right": "wpctl set-mute @DEFAULT_SOURCE@ toggle"
   },
-  "custom/media": {
+  "custom/spotify": {
+    "type": "script",
     "format": "{icon} {text}",
     "return-type": "json",
-    "max-length": 40,
-    "format-icons": {
-      "spotify": "",
-      "default": "🎜"
-    },
-    "escape": true,
-    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    "on-click": "playerctl -p spotify play-pause",
+    "on-scroll-up": "playerctl -p spotify previous",
+    "on-scroll-down": "playerctl -p spotify next",
+    "max-length": 50,
+    "tooltip": true,
+    "exec": "$HOME/.local/bin/hypr/waybar/spotifyplayer.sh"
   },
   "custom/power": {
     "class": "power-button",
@@ -287,7 +260,7 @@
     ]
   },
   "custom/mic_in_use": {
-    // "exec-if": "~/.local/bin/hypr/waybar/mic_in_use.sh",
+    "exec-if": "~/.local/bin/hypr/waybar/mic_in_use.sh",
     "exec": "~/.local/bin/hypr/waybar/audio_source_status.sh",
     "return-type": "json",
     "format": "{icon}",
