@@ -14,8 +14,7 @@
     "mpris"
     // "hyprland/window",
   ],
-  "modules-center": [
-  ],
+  "modules-center": [],
   "modules-right": [
     "privacy",
     "idle_inhibitor",
@@ -30,14 +29,14 @@
     "custom/power"
   ],
   "group/audio": {
-		"orientation": "horizontal",
-		"drawer": {
-			"transition-duration": 500,
-			"children-class": "not-power",
-			"transition-left-to-right": false
-		},
-		"modules": ["pulseaudio", "custom/microphone"]
-	},
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": false
+    },
+    "modules": ["pulseaudio", "custom/microphone"]
+  },
   // Modules configuration
   "hyprland/workspaces": {
     "format": "{icon} {windows}",
@@ -86,10 +85,7 @@
   "sway/scratchpad": {
     "format": "{icon} {count}",
     "show-empty": false,
-    "format-icons": [
-      "",
-      ""
-    ],
+    "format-icons": ["", ""],
     "tooltip": true,
     "tooltip-format": "{app}: {title}"
   },
@@ -114,40 +110,32 @@
     }
   },
   "clock": {
-      "format": "{:%H:%M}  ",
-      "format-alt": "{:%A, %B %d, %Y (%R)}  ",
-      "tooltip-format": "<tt><small>{calendar}</small></tt>",
-      "calendar": {
-                  "mode"          : "year",
-                  "mode-mon-col"  : 3,
-                  "weeks-pos"     : "right",
-                  "on-scroll"     : 1,
-                  "format": {
-                            "months":     "<span color='#ffead3'><b>{}</b></span>",
-                            "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-                            "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-                            "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-                            "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-                            }
-                  },
-      "actions":  {
-                  "on-click-right": "mode",
-                  "on-scroll-up": "tz_up",
-                  "on-scroll-down": "tz_down",
-                  "on-scroll-up": "shift_up",
-                  "on-scroll-down": "shift_down"
-                  }
+    "format": "{:%H:%M}",
+    "format-alt": "{:%A, %B %d, %Y  %R}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "shift_down",
+      "on-scroll-down": "shift_up"
+    }
   },
   "backlight": {
     // "device": "acpi_video1",
     "format": "{percent}% {icon}",
-    "format-icons": [
-      "🌑",
-      "🌘",
-      "🌗",
-      "🌖",
-      "🌕"
-    ]
+    "format-icons": ["🌑", "🌘", "🌗", "🌖", "🌕"]
   },
   "battery": {
     "states": {
@@ -162,13 +150,7 @@
     "format-alt": "{time} {icon}",
     "format-good": "", // An empty format will hide the module
     // "format-full": "",
-    "format-icons": [
-      " ",
-      " ",
-      " ",
-      " ",
-      " "
-    ]
+    "format-icons": [" ", " ", " ", " ", " "]
   },
   "battery#bat2": {
     "bat": "BAT2"
@@ -208,23 +190,19 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": [
-        "",
-        "",
-        ""
-      ]
+      "default": ["", "", ""]
     },
     "on-click": "pavucontrol",
     "on-click-right": "wpctl set-mute @DEFAULT_SOURCE@ toggle"
   },
   "custom/microphone": {
-		"exec": "~/.local/bin/hypr/waybar/microphone.sh",
-		"return-type": "json",
-		"on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 2%+ --limit 1",
-		"on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 2%- --limit 1",
-		"on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
-		"interval": 1
-	},
+    "exec": "~/.local/bin/hypr/waybar/microphone.sh",
+    "return-type": "json",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 2%+ --limit 1",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 2%- --limit 1",
+    "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
+    "interval": 1
+  },
   "custom/power": {
     "class": "power-button",
     "format": "⏻",
@@ -293,5 +271,5 @@
         "name": "obs"
       }
     ]
-  },
+  }
 }
