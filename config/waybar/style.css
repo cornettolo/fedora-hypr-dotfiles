@@ -51,11 +51,24 @@ tooltip {
 }
 
 menu {
-    border-radius: 4px;
     padding: 6px;
 }
 
+menuitem {
+    margin: 6px;
+    padding: 4px;
+    border-radius: 4px;
+}
+
 label.module {
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+
+#tray,
+#privacy
+{
     padding: 4px 8px;
     border-radius: 4px;
     border: 1px solid transparent;
@@ -69,10 +82,6 @@ label.module {
 /* --- Specific Module Structure --- */
 #custom-media {
     min-width: 100px;
-}
-
-#tray {
-    border-radius: 4px;
 }
 
 #keyboard-state {

@@ -164,6 +164,10 @@ label.module:hover {
     background-color: rgba(251, 73, 52, 0.1);
 }
 
+#privacy {
+    background-color: rgba(69, 133, 136, 0.1);
+}
+
 #privacy-item.screenshare {
     color: #689D6A;
 }
