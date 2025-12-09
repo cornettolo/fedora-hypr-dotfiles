@@ -46,37 +46,27 @@ window#waybar {
     padding: 4px 16px;
 }
 
+tooltip {
+     border-radius: 4px;
+}
+
+menu {
+    border-radius: 4px;
+    padding: 6px;
+}
+
+label.module {
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
 
 /* --- Base Module Structure --- */
-/* This rule applies padding to all listed modules efficiently */
-#clock,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-#power-profiles-daemon,
-#custom-mic_in_use,
-#mpd {
-    padding: 4px 4px;
+#custom-microphone {
+  margin-right: 4px;
 }
 
 /* --- Specific Module Structure --- */
-
-#cpu,
-#memory,
-#disk {
-    padding-right: 8px;
-}
-
 #custom-media {
     min-width: 100px;
 }
@@ -92,12 +82,10 @@ window#waybar {
 #custom-power,
 #custom-notification {
     padding: 2px 12px;
-    border-radius: 4px;
 }
 
 #battery {
     padding: 2px 12px;
-    border-radius: 4px;
 }
 
 /* --- Animations --- */

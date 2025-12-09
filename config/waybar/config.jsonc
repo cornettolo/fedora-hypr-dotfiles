@@ -7,7 +7,7 @@
   "margin-left": 0,
   "margin-right": 0,
   //"width": 1280, // Waybar width
-  "spacing": 12, // Gaps between modules
+  "spacing": 8, // Gaps between modules
   // Choose the order of the modules
   "modules-left": [
     "hyprland/workspaces",
@@ -15,21 +15,29 @@
     // "hyprland/window",
   ],
   "modules-center": [
-    "clock"
   ],
   "modules-right": [
     "privacy",
     "idle_inhibitor",
-    "pulseaudio",
-    "network",
+    "group/audio",
     "backlight",
     "hyprland/language",
     "bluetooth",
     "battery",
     "tray",
     "custom/notification",
+    "clock",
     "custom/power"
   ],
+  "group/audio": {
+		"orientation": "horizontal",
+		"drawer": {
+			"transition-duration": 500,
+			"children-class": "not-power",
+			"transition-left-to-right": false
+		},
+		"modules": ["pulseaudio", "custom/microphone"]
+	},
   // Modules configuration
   "hyprland/workspaces": {
     "format": "{icon} {windows}",
@@ -37,8 +45,8 @@
     "window-rewrite-default": "󱓼",
     "window-rewrite": {
       "class<zen>": "",
-      "class<brave>": "",
-      "class<intellij>": "",
+      "class<.*browser>": "",
+      "class<jetbrains-idea-ce>": "",
       "kitty": "",
       "telegram": "",
       "slack": "",
@@ -88,6 +96,7 @@
   "hyprland/language": {
     "format": " 󰌌 {short} {variant} ",
     // "format-us": "US ({variant})",
+    "on-click": " hyprctl switchxkblayout all next"
   },
   "idle_inhibitor": {
     "format": "{icon}",
@@ -105,28 +114,29 @@
     }
   },
   "clock": {
-    "format": "{:%H:%M}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%H:%M %Y-%m-%d}"
-  },
-  "cpu": {
-    "format": "{usage}% ",
-    "tooltip": false
-  },
-  "memory": {
-    "format": "{}% "
-  },
-  "temperature": {
-    // "thermal-zone": 2,
-    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-    "critical-threshold": 80,
-    // "format-critical": "{temperatureC}°C {icon}",
-    "format": "{temperatureC}°C {icon}",
-    "format-icons": [
-      "",
-      "",
-      ""
-    ]
+      "format": "{:%H:%M}  ",
+      "format-alt": "{:%A, %B %d, %Y (%R)}  ",
+      "tooltip-format": "<tt><small>{calendar}</small></tt>",
+      "calendar": {
+                  "mode"          : "year",
+                  "mode-mon-col"  : 3,
+                  "weeks-pos"     : "right",
+                  "on-scroll"     : 1,
+                  "format": {
+                            "months":     "<span color='#ffead3'><b>{}</b></span>",
+                            "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                            "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                            "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                            "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                            }
+                  },
+      "actions":  {
+                  "on-click-right": "mode",
+                  "on-scroll-up": "tz_up",
+                  "on-scroll-down": "tz_down",
+                  "on-scroll-up": "shift_up",
+                  "on-scroll-down": "shift_down"
+                  }
   },
   "backlight": {
     // "device": "acpi_video1",
@@ -141,7 +151,7 @@
   },
   "battery": {
     "states": {
-      // "good": 95,
+      "good": 95,
       "warning": 30,
       "critical": 15
     },
@@ -150,7 +160,7 @@
     "format-charging": "{capacity}% ",
     "format-plugged": "{capacity}% ",
     "format-alt": "{time} {icon}",
-    // "format-good": "", // An empty format will hide the module
+    "format-good": "", // An empty format will hide the module
     // "format-full": "",
     "format-icons": [
       " ",
@@ -176,19 +186,19 @@
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ipaddr}/{cidr}  ",
-    "tooltip-format": "{ifname} via {gwaddr}  ",
+    "format-wifi": "{ipaddr} ",
+    "format-ethernet": "{ipaddr}  ",
+    "tooltip-format": "{essid}  ",
     "format-linked": "{ifname} (No IP)  ",
     "format-disconnected": "Disconnected ⚠",
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{volume}% {icon} {format_source}",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-bluetooth-muted": " {icon}",
+    "format-muted": " ",
     "format-source": "{volume}% ",
     "format-source-muted": "",
     "format-icons": {
@@ -207,6 +217,14 @@
     "on-click": "pavucontrol",
     "on-click-right": "wpctl set-mute @DEFAULT_SOURCE@ toggle"
   },
+  "custom/microphone": {
+		"exec": "~/.local/bin/hypr/waybar/microphone.sh",
+		"return-type": "json",
+		"on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 2%+ --limit 1",
+		"on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 2%- --limit 1",
+		"on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
+		"interval": 1
+	},
   "custom/power": {
     "class": "power-button",
     "format": "⏻",
@@ -215,9 +233,9 @@
   },
   "bluetooth": {
     // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
-    "format": " {status}",
-    "format-disabled": "", // an empty format will hide the module
-    "format-connected": " {num_connections} connected",
+    "format": "",
+    "format-disabled": "", // an empty format will hide the module
+    "format-connected": " {num_connections}",
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
@@ -276,18 +294,4 @@
       }
     ]
   },
-  "custom/mic_in_use": {
-    "exec-if": "~/.local/bin/hypr/waybar/mic_in_use.sh",
-    "exec": "~/.local/bin/hypr/waybar/audio_source_status.sh",
-    "return-type": "json",
-    "format": "{icon}",
-    "format-icons": {
-      "muted": "󰍭 ",
-      "unmuted": "󰍬 "
-    },
-    "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 2%+ --limit 1",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 2%- --limit 1",
-    "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
-    "interval": 1
-  }
 }

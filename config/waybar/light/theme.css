@@ -51,7 +51,6 @@ button:hover {
 }
 
 /* --- Specific Module States & Colors --- */
-
 #workspaces button.active {
     color: #32302f;
     background-color: #83A598;
