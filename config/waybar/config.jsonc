@@ -7,7 +7,7 @@
   "margin-left": 0,
   "margin-right": 0,
   //"width": 1280, // Waybar width
-  "spacing": 8, // Gaps between modules
+  "spacing": 4, // Gaps between modules
   // Choose the order of the modules
   "modules-left": [
     "hyprland/workspaces",
@@ -139,7 +139,7 @@
   },
   "battery": {
     "states": {
-      "good": 95,
+      // "good": 95,
       "warning": 30,
       "critical": 15
     },

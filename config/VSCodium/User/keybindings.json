@@ -95,5 +95,12 @@
     "key": "p", // "paste" a file/folder
     "command": "filesExplorer.paste",
     "when": "filesExplorerFocus && !inputFocus"
+  },
+  //================================================================
+  // Toggle relative lines
+  //================================================================
+  {
+    "key": "ctrl+alt+n",
+    "command": "hybrid-line-numbers.toggle"
   }
 ]
