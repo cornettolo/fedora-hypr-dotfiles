@@ -1,0 +1,106 @@
+[
+  // The smart Escape key to return focus to the editor
+  {
+    "key": "escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "!editorTextFocus"
+  },
+
+  //================================================================
+  // Panel Navigation (for Explorer, Search, etc.)
+  // These work when a list in the sidebar has focus
+  //================================================================
+  {
+    "key": "j",
+    "command": "list.focusDown",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "k",
+    "command": "list.focusUp",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "l",
+    "command": "list.expand", // Expands a folder
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "h",
+    "command": "list.collapse", // Collapses a folder
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "list.select", // Opens a file
+    "when": "listFocus && !inputFocus"
+  },
+
+  //================================================================
+  // Search Panel Navigation
+  //================================================================
+  {
+    // Use Ctrl+j to move DOWN from the search inputs to the results list
+    "key": "ctrl+j",
+    "command": "search.action.focusNextSearchResult",
+    "when": "searchViewletVisible && inputFocus"
+  },
+  {
+    // Use Ctrl+k to move UP from the results list to the main search input
+    "key": "ctrl+k",
+    "command": "search.action.focusSearchInput",
+    "when": "searchViewletVisible && listFocus"
+  },
+  {
+    // Open a search result in a VERTICAL split
+    "key": "ctrl+v",
+    "command": "search.action.openResultInEditor",
+    "args": { "openToSide": true },
+    "when": "searchViewletVisible && listFocus"
+  },
+  //================================================================
+  // File & Directory Operations (in File Explorer)
+  //================================================================
+  {
+    "key": "a", // "add" a new file
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+a", // "Add" a new directory
+    "command": "explorer.newFolder",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "r", // "rename" the current file/folder
+    "command": "renameFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "d d", // "delete" the current file/folder
+    "command": "deleteFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "c", // "copy" the current file/folder
+    "command": "filesExplorer.copy",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "x", // "cut" the current file/folder
+    "command": "filesExplorer.cut",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "p", // "paste" a file/folder
+    "command": "filesExplorer.paste",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  //================================================================
+  // Toggle relative lines
+  //================================================================
+  {
+    "key": "ctrl+alt+n",
+    "command": "hybrid-line-numbers.toggle"
+  }
+]

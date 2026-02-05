@@ -1,0 +1,73 @@
+{
+  "workbench.startupEditor": "none",
+  "git.autofetch": true,
+  "editor.fontFamily": "'CaskaydiaCove Nerd Font',Consolas, 'Courier New', monospace",
+  "editor.fontSize": 13,
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "debug.terminal.clearBeforeReusing": true,
+  "terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font Mono'",
+  "editor.fontLigatures": false,
+  "editor.padding.bottom": 40,
+  "editor.padding.top": 40,
+  "gitlens.graph.scrollRowPadding": 60,
+  "eslint.format.enable": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.tabSize": 2,
+  "workbench.tree.indent": 16,
+  "git.enableSmartCommit": true,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.fontLigatures.enabled": true,
+  "editor.inlayHints.padding": true,
+  "editor.bracketPairColorization.enabled": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.editorLargeFileConfirmation": 30,
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredLightColorTheme": "Gruvbox Light Medium",
+  "workbench.preferredDarkColorTheme": "Gruvbox Dark Medium",
+  "editor.largeFileOptimizations": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.lineNumbers": "relative",
+  "editor.glyphMargin": true,
+  "search.showLineNumbers": true,
+  "notebook.lineNumbers": "on",
+  "debug.console.fontSize": 13,
+  "terminal.integrated.fontSize": 13,
+  "chat.editor.fontSize": 13,
+  "markdown.preview.fontSize": 13,
+  "markdown.preview.lineHeight": 1.2,
+  "editor.renderWhitespace": "all",
+  "editor.minimap.sectionHeaderFontSize": 10,
+  "files.saveConflictResolution": "overwriteFileOnDisk",
+  "editor.quickSuggestions": {
+    "other": "off"
+  },
+  "editor.quickSuggestionsDelay": 20,
+  "editor.autoClosingBrackets": "beforeWhitespace",
+  "window.menuBarVisibility": "compact",
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "window.enableMenuBarMnemonics": false,
+  "window.titleBarStyle": "native",
+  "window.menuStyle": "custom",
+  "window.customTitleBarVisibility": "never",
+  "editor.mouseWheelZoom": true,
+  "keyboard.dispatch": "keyCode"
+}
