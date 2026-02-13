@@ -41,18 +41,11 @@
   "hyprland/workspaces": {
     "format": "{icon} {windows}",
     "format-window-separator": " ",
-    "window-rewrite-default": "󱓼",
-    "window-rewrite": {
-      "class<zen>": "",
-      "class<.*browser>": "",
-      "class<jetbrains-idea-ce>": "",
-      "kitty": "",
-      "telegram": "",
-      "slack": "",
-      "codium": "󰨞",
-      "spotify": "󰓇",
-      "class<discord>": "",
-      "steam": "󰓓"
+    "workspace-taskbar": {
+        "enable": true,
+        "update-active-window": false,
+        "format": "{icon}",
+        "icon-size": 14,
     }
   },
   "mpris": {
