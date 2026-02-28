@@ -1,4 +1,9 @@
-spawn-at-startup "ags" "run"
+spawn-at-startup "qs"
+spawn-at-startup "swaync"
+spawn-at-startup "hypridle"
+spawn-at-startup "hyprpolkitagent"
+spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
+spawn-at-startup "hyprpaper"
 
 prefer-no-csd
 
@@ -10,6 +15,11 @@ input {
         }
     }
 
+    mouse {
+      accel-profile "flat"
+      accel-speed 0.4
+    }
+
     touchpad {
         tap
         natural-scroll
@@ -17,8 +27,8 @@ input {
     }
 }
 
-output "eDP-2" {
-    mode "3440x1440@120"
+output "DP-1" {
+    mode "3440x1440@144"
     transform "normal"
     position x=0 y=0
 }
@@ -32,10 +42,14 @@ layout {
         proportion 0.66667
     }
 
-    default-column-width { proportion 0.5; }
+    default-column-width {
+      proportion 0.5
+    }
+
     focus-ring {
-        width 2 
-        active-color "#7fc8ff"
+        width 4
+        active-gradient from="#80c8ff" to="#bbddff" angle=45
+        // active-color "#7fc8ff"
         inactive-color "#505050"
     }
 
@@ -326,9 +340,9 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    Shift+Mod+S { screenshot; }
+    Ctrl+Mod+S { screenshot-screen; }
+    Alt+Mod+S { screenshot-window; }
 
     // The allow-inhibiting=false property can be applied to other binds as well,
     // which ensures niri always processes them, even when an inhibitor is active.
@@ -339,4 +353,4 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
-}
+  }
