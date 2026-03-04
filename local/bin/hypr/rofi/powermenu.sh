@@ -1,14 +1,5 @@
 #!/usr/bin/env bash
 
-## Author : Aditya Shakya (adi1090x)
-## Github : @adi1090x
-#
-## Rofi   : Power Menu
-#
-## Available Styles
-#
-## style-1   style-2   style-3   style-4   style-5
-
 # Current Theme
 dir="$HOME/.config/rofi"
 theme='powermenu'
@@ -83,6 +74,8 @@ run_cmd() {
         hyprctl dispatch exit
       elif [[ "$DESKTOP_SESSION" == 'hyprland-uwsm' ]]; then
         hyprctl dispatch exit
+      elif [[ "$DESKTOP_SESSION" == 'niri' ]]; then
+        niri msg action quit -s
       fi
     fi
   else

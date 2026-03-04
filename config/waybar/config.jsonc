@@ -11,16 +11,19 @@
   // Choose the order of the modules
   "modules-left": [
     "hyprland/workspaces",
+    "niri/workspaces",
     "mpris"
     // "hyprland/window",
   ],
-  "modules-center": [],
+  "modules-center": [
+    "niri/window"
+  ],
   "modules-right": [
     "privacy",
     "idle_inhibitor",
     "group/audio",
     "backlight",
-    "hyprland/language",
+    "niri/language",
     "bluetooth",
     "battery",
     "tray",
@@ -35,18 +38,26 @@
       "children-class": "not-power",
       "transition-left-to-right": false
     },
-    "modules": ["pulseaudio", "custom/microphone"]
+    "modules": [
+      "pulseaudio",
+      "custom/microphone"
+    ]
   },
   // Modules configuration
   "hyprland/workspaces": {
     "format": "{icon} {windows}",
     "format-window-separator": " ",
     "workspace-taskbar": {
-        "enable": true,
-        "update-active-window": false,
-        "format": "{icon}",
-        "icon-size": 14,
+      "enable": true,
+      "update-active-window": false,
+      "format": "{icon}",
+      "icon-size": 14
     }
+  },
+  "niri/workspaces": {},
+  "niri/language": {
+    "format": " 󰌌 {short} {variant} ",
+    "on-click": "niri msg action switch-layout next"
   },
   "mpris": {
     "format": "{player_icon} {title} - {artist} ",
@@ -78,7 +89,10 @@
   "sway/scratchpad": {
     "format": "{icon} {count}",
     "show-empty": false,
-    "format-icons": ["", ""],
+    "format-icons": [
+      "",
+      ""
+    ],
     "tooltip": true,
     "tooltip-format": "{app}: {title}"
   },
@@ -128,7 +142,13 @@
   "backlight": {
     // "device": "acpi_video1",
     "format": "{percent}% {icon}",
-    "format-icons": ["🌑", "🌘", "🌗", "🌖", "🌕"]
+    "format-icons": [
+      "🌑",
+      "🌘",
+      "🌗",
+      "🌖",
+      "🌕"
+    ]
   },
   "battery": {
     "states": {
@@ -143,7 +163,13 @@
     "format-alt": "{time} {icon}",
     "format-good": "", // An empty format will hide the module
     // "format-full": "",
-    "format-icons": [" ", " ", " ", " ", " "]
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
+    ]
   },
   "battery#bat2": {
     "bat": "BAT2"
@@ -183,7 +209,11 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""]
+      "default": [
+        "",
+        "",
+        ""
+      ]
     },
     "on-click": "pavucontrol",
     "on-click-right": "wpctl set-mute @DEFAULT_SOURCE@ toggle"

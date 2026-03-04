@@ -1,4 +1,4 @@
-spawn-at-startup "qs"
+spawn-at-startup "waybar"
 spawn-at-startup "swaync"
 spawn-at-startup "hypridle"
 spawn-at-startup "hyprpolkitagent"
@@ -10,8 +10,8 @@ prefer-no-csd
 input {
     keyboard {
         xkb {
-            layout "us"
-            variant "intl"
+            layout "us,us"
+            variant ",intl"
         }
     }
 
@@ -348,7 +348,7 @@ binds {
     // which ensures niri always processes them, even when an inhibitor is active.
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
-    Ctrl+Alt+Delete { quit; }
+    Ctrl+Alt+Delete { spawn "~/.local/bin/hypr/rofi/powermenu.sh"; }
 
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
