@@ -36,13 +36,13 @@ window#waybar {
 }
 
 #workspaces button {
-    min-width: 50px;
+    min-width: 14px;
     padding: 4px 8px;
     border-radius: 4px;
 }
 
 #workspaces button.active {
-    min-width: 80px;
+    min-width: 20px;
     padding: 4px 16px;
 }
 
