@@ -60,8 +60,8 @@
     "on-click": "niri msg action switch-layout next"
   },
   "mpris": {
-    "format": "{player_icon} {title} - {artist} ",
-    "format-paused": "{status_icon} {title} - {artist}",
+    "format": "{player_icon}",
+    "format-paused": "{status_icon}",
     "tooltip": true,
     "tooltip-format": "{dynamic}",
     "player-icons": {
